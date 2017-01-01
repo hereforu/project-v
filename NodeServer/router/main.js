@@ -68,4 +68,16 @@ module.exports = function(app)
      
       form.parse(req);
 	});
+
+  app.get('/list', function(req, res, next) {
+    // 그냥 board/ 로 접속할 경우 전체 목록 표시로 리다이렉팅
+
+    var array1 = { idx : 'a', path : '/tmp/test.file', title : 'b'};
+    var array2 = { idx : 'b', path : '/tmp/test2.file', title : 'c'};
+
+    var tmp = [array1, array2];
+    var title = "list Test";
+
+    res.render('list.ejs', {title : title, rows: tmp});
+});
 }
