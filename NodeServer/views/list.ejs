@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+<h1><%= title %></h1>
+
+<a href="/multipartyUpload">글쓰기로 이동</a>
+<br>
+<br>
+
+<table border="1">
+    <tr>
+        <td>번호</td>
+        <td>제목</td>
+        <td>영상</td>
+    </tr>
+
+<%
+     for(var i=0; i<rows.length; i++)
+     {
+        var oneItem = rows[i];
+%>
+    <tr>
+        <td><%=oneItem.idx%></td>
+        <td><%=oneItem.path%></td>
+        <td><%=oneItem.title%></td>
+    </tr>
+
+<%
+     }
+%>
+</table>
+
+</body>
+</html>
